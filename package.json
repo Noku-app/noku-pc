@@ -1,0 +1,25 @@
+{
+  "name": "nokupc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^11.2.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noku-app/noku-pc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noku-app/noku-pc/issues"
+  },
+  "homepage": "https://github.com/Noku-app/noku-pc#readme"
+}
