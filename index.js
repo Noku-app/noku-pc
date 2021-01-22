@@ -53,7 +53,8 @@ const createWindow = async (url="https://noku.wtf/home") => {
                 nodeIntegration: true,
                 enableRemoteModule: true,
                 nativeWindowOpen: true
-            }
+            },
+            icon: "./dump/logo.png"
         }
     )
     state.window.loadURL(url)

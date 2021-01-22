@@ -1,15 +1,21 @@
 {
-  "name": "nokupc",
-  "version": "0.0.2",
+  "name": "noku",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "electron": "^11.2.0",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron": "^3.0.6",
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-winstaller": "^4.0.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "electron ."
+    "start": "electron . --disable-gpu",
+    "linux": "electron-packager . noku --overwrite --prune --platform linux --arch x64 --icon=dump/logo.png --out release/linux/app",
+    "linux-debian": "electron-installer-debian --src release/linux/app --arch amd64 --config debian.json",
+    "windows": "electron-packager . noku --overwrite --platform=win32 --asar=true --arch=ia32 --icon=dump/logo.ico --prune=true --out=release/windows/app --version-string.CompanyName=noku'noku' --version-string.FileDescription=CE -version-string.ProductName='noku'"
   },
   "repository": {
     "type": "git",

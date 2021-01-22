@@ -1,0 +1,9 @@
+{
+    "dest": "release/linux/build",
+    "icon": "dump/logo.png",
+    "description": "Worlds worst social app",
+    "categories": [],
+    "lintianOverrides": [
+      "changelog-file-missing-in-native-package"
+    ]
+}
