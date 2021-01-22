@@ -1,14 +1,50 @@
-const { stat } = require("fs");
-
-const electron = require("electron"), state = {};
+const electron = require("electron"), state = {}, package = require("./package.json");
 
 if (require('electron-squirrel-startup')) {
     electron.app.quit();
 };
 
+const menu = () => {
+    return [
+        {
+            label: "info",
+            submenu: [
+                {
+                    label: "Go Home",
+                    click: () => createWindow()
+                },
+                {
+                    label: "github",
+                    submenu: [
+                        {
+                            label: "home",
+                            click: () => createWindow(package.homepage)
+                        },
+                        {
+                            label: "issues",
+                            click: () => createWindow(package.bugs.url)
+                        },
+                        {
+                            label: "releases",
+                            click: () => createWindow(package.releases)
+                        }
+                    ]
+                },
+                {
+                    label: "version",
+                    submenu: [
+                        {
+                            label: package.version
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
 
-const createWindow = async () => {
-    state.window = new electron.BrowserWindow(
+const createWindow = async (url="https://noku.wtf/home") => {
+    state.window = state.window ? state.window : new electron.BrowserWindow(
         {
             width: 1000,
             height: 800,
@@ -20,13 +56,12 @@ const createWindow = async () => {
             }
         }
     )
-    electron.Menu.setApplicationMenu(null)
-    state.window.loadURL("https://noku.wtf/home")
+    state.window.loadURL(url)
 }
 
 electron.app.on(
     "ready",
-    async () => createWindow()
+    async () => {createWindow(); electron.Menu.setApplicationMenu(electron.Menu.buildFromTemplate(menu()))}
 )
 
 electron.app.on(

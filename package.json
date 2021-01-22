@@ -1,6 +1,6 @@
 {
   "name": "nokupc",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "dependencies": {
@@ -18,8 +18,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "releases": "https://github.com/Noku-app/noku-pc/releases",
   "bugs": {
     "url": "https://github.com/Noku-app/noku-pc/issues"
   },
-  "homepage": "https://github.com/Noku-app/noku-pc#readme"
+  "homepage": "https://github.com/Noku-app/noku-pc"
 }
