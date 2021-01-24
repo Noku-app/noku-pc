@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "electron": "^3.0.6",
+    "electron": "^7.2.4",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.2.0",
     "electron-squirrel-startup": "^1.0.0",
